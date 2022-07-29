@@ -10,6 +10,13 @@ const ctx = cnv.getContext('2d');
 /* Funções */
 function loop(){
     requestAnimationFrame(loop, cnv);
+    update();
+}
+
+
+function update(){
+    ctx.fillStyle = 'rgba(0,0,0,1)';
+    ctx.fillRect(0, 0, cnv.width, cnv.height);
 }
 
 
@@ -21,13 +28,6 @@ function loop(){
 
 
 
-
-
-
-
-
-
-//console.log(cnv);
 
 
 
