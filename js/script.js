@@ -6,7 +6,7 @@ cnv.height = innerHeight;
 
 const ctx = cnv.getContext('2d');
 
-const player = new Sprite(cnv.width/2, cnv.height/2, 30, 'white');
+const player = new Player(cnv.width/2, cnv.height/2, 30, '#48FCFF');
 
 
 /* Funções */
