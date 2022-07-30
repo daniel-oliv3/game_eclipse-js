@@ -31,7 +31,9 @@ function spawnEnemies(){
             y: Math.sin(angle)
         }
 
-        enemies.push(new Enemy());
+        const color = 'hsl('+ Math.random() * 360 +', 50%, 50%)'; //cores dos inimigos,
+
+        enemies.push(new Enemy(posX, posY, radius, color, velocity));
     }, 1500);
 }
 
@@ -60,9 +62,17 @@ function update(){
     ctx.fillStyle = 'rgba(0, 0, 0, .1)';
     ctx.fillRect(0, 0, cnv.width, cnv.height);
 
-
+    checkEnemies();
     checkProjectiles();
     player.update();
+}
+
+
+/* - */
+function checkEnemies(){
+    enemies.forEach((enemy) => {
+        enemy.update();
+    });
 }
 
 
@@ -87,7 +97,7 @@ function checkOffScreen(projectile, index){
 }
 
 loop();
-
+spawnEnemies();
 
 
 
