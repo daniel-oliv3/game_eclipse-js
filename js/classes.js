@@ -92,3 +92,25 @@ class Player extends Sprite {
     }
 
 }
+
+
+/* Inimigo */
+class Enemy extends Projectile {
+    constructor(x, y, radius, color, velocity){
+        super(x, y, radius, color, velocity);
+    }
+
+    draw(){
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI*2, false);
+        ctx.strokeStyle = this.color;
+        ctx.stroke();
+    }
+}
+
+
+
+
+
+
+
