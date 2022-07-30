@@ -1,15 +1,40 @@
 const $ = (tag) => document.querySelector(tag);
 
 const cnv = $('canvas');
-cnv.width = innerWidth;
-cnv.height = innerHeight;
-
+    cnv.width = innerWidth;
+    cnv.height = innerHeight;
 const ctx = cnv.getContext('2d');
-
 const player = new Player(cnv.width/2, cnv.height/2, 30, '#48FCFF');
+const shootingSpeed = 4;
 
 let projectiles = [];
-const shootingSpeed = 4;
+let enemies = [];
+let intervalID;
+
+
+function spawnEnemies(){
+    intervalID = setInterval(() => {
+        const radius = Math.floor(Math.random() * 26) + 5;
+
+        let posX, posY;
+        if(Math.random() < .5){
+            posX = Math.random() < .5 ? 0 - radius : cnv.width + radius;
+            posY = Math.random() * cnv.height;
+        }else {
+            posX = Math.random() * cnv.width;
+            posY = Math.random() < .5 ? 0 - radius : cnv.height + radius;
+        }
+
+        const angle = Math.atan2(player.y - posY, player.x - posX);
+        const velocity = {
+            x: Math.cos(angle),
+            y: Math.sin(angle)
+        }
+
+        enemies.push(new Enemy());
+    }, 1500);
+}
+
 
 cnv.addEventListener('click', (e) =>{
     e.preventDefault();
