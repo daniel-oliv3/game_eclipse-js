@@ -16,6 +16,23 @@ class Sprite {
 
 }
 
+
+/* Projectile */
+class Projectile extends Sprite {
+    constructor(x, y, radius, color, velocity){
+        super(x, y, radius, color);
+        this.velocity = velocity;
+    }
+
+    update(){
+        this.draw();
+        this.x += this.velocity.x;
+        this.y += this.velocity.y;
+    }
+}
+
+
+/* Sphere */
 class Sphere extends Sprite {
     constructor(x, y, radius, color, angleUpdateValue, player){
         super(x, y, radius, color);
@@ -37,7 +54,7 @@ class Sphere extends Sprite {
 }
 
 
-/* - */
+/* Player */
 class Player extends Sprite {
     constructor(x, y, radius, color){
         super(x, y, radius, color);
