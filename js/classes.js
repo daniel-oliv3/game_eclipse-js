@@ -41,12 +41,21 @@ class Sphere extends Sprite {
 class Player extends Sprite {
     constructor(x, y, radius, color){
         super(x, y, radius, color);
-        this.sl = new Sphere(
+        this.s1 = new Sphere(
             this.x + Math.cos(0) * this.radius,
             this.y + Math.sin(0) * this.radius,
             2,
             '#48FCFF',
             .08,
+            this
+        )
+
+        this.s2 = new Sphere(
+            this.x + Math.cos(0) * this.radius,
+            this.y + Math.sin(0) * this.radius,
+            2,
+            '#48FCFF',
+            -.08,
             this
         )
     }
@@ -60,7 +69,8 @@ class Player extends Sprite {
 
     update(){
         this.draw();
-        this.sl.update();
+        this.s1.update();
+        this.s2.update();
     }
 
 }
