@@ -18,7 +18,7 @@ class Sprite {
 
 class Sphere extends Sprite {
     constructor(x, y, radius, color, angleUpdateValue, player){
-        super(x, y, radios, color);
+        super(x, y, radius, color);
         this.angleUpdateValue = angleUpdateValue;
         this.player = player;
         this.angle = 0;
@@ -41,6 +41,14 @@ class Sphere extends Sprite {
 class Player extends Sprite {
     constructor(x, y, radius, color){
         super(x, y, radius, color);
+        this.sl = new Sphere(
+            this.x + Math.cos(0) * this.radius,
+            this.y + Math.sin(0) * this.radius,
+            2,
+            '#48FCFF',
+            .08,
+            this
+        )
     }
 
     draw(){
@@ -48,6 +56,11 @@ class Player extends Sprite {
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI*2,false);
         ctx.strokeStyle = this.color;
         ctx.stroke();
+    }
+
+    update(){
+        this.draw();
+        this.sl.update();
     }
 
 }
