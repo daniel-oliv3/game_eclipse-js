@@ -41,6 +41,7 @@ class Sphere extends Sprite {
 class Player extends Sprite {
     constructor(x, y, radius, color){
         super(x, y, radius, color);
+        this.coreRadius = radius/6;
         this.s1 = new Sphere(
             this.x + Math.cos(0) * this.radius,
             this.y + Math.sin(0) * this.radius,
@@ -62,7 +63,7 @@ class Player extends Sprite {
 
     draw(){
         ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI*2,false);
+        ctx.arc(this.x, this.y, this.coreRadius, 0, Math.PI*2,false);
         ctx.strokeStyle = this.color;
         ctx.stroke();
     }

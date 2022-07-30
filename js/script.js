@@ -17,7 +17,7 @@ function loop(){
 
 
 function update(){
-    ctx.fillStyle = 'rgba(0, 0, 0, 1)';
+    ctx.fillStyle = 'rgba(0, 0, 0, .1)';
     ctx.fillRect(0, 0, cnv.width, cnv.height);
 
     player.update();
