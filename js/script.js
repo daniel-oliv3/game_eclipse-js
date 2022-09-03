@@ -95,8 +95,13 @@ function checkProjectiles(){
             const distance = Math.hypot(p.x - enemy.x, p.y - enemy.y);
 
             /* Colisçao do projetil com o inimigo */
-            if(distance < p.radius + enemy.radius){ 
-                enemies.splice(eIndex, 1);
+            if(distance < p.radius + enemy.radius){
+                if(enemy.radius > 15){
+                    enemy.newRadius = enemy.radius -10;
+                }else {
+                    enemies.splice(eIndex, 1);
+                } 
+                
                 projectiles.splice(i, 1);
                 createParticles(enemy, p);
             }
