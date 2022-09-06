@@ -56,6 +56,8 @@ cnv.addEventListener('click', (e) =>{
     projectiles.push(new Projectile(player.x, player.y, 3, '#48FCFF', velocity));
 });
 
+btnNewGame.addEventListener('click', newGame);
+
 
 /* Funções */
 function loop(){
@@ -91,6 +93,24 @@ function checkEnemies(){
 
 function gameOver(){
     cancelAnimationFrame(animationID);
+    clearInterval(intervalID);
+    gameOverScore.innerText = score;
+    gameOverModal.style.opacity = 1;
+    gameOverModal.style.zIndex = 1;
+}
+
+function newGame(){
+    gameOverModal.style.opacity = 0;
+    gameOverModal.style.zIndex = -1;
+    projectiles = [];
+    particles = [];
+    enemies = [];
+    score = 0;
+    txtScore.innerText = 'SCORE: ' + score;
+    loop();
+    spawnEnemies();
+    ctx.fillStyle = 'white';
+    ctx.fillRect(0, 0, cnv.width, cnv.height);
 }
 
 

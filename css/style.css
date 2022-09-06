@@ -38,6 +38,7 @@ body {
     align-items: center;
     opacity: 0;
     z-index: -1;
+    transition: opacity .5s;
 }
 
 #gameOverContainer {
