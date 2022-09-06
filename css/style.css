@@ -5,11 +5,24 @@
     display: block;
 }
 
-title {
+body {
+    font-family: sans-serif;
+}
+
+#txtScore {
+    font-weight: bold;
+    text-shadow: 0 0 8px #48FCFF;
+}
+
+/*title {
     background: #000;
     color: #fff;
 }
 
+#txtScore {
+    background: #000;
+    color: #fff;
+}*/
 
 
 
