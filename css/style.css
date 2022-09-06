@@ -5,11 +5,17 @@
     display: block;
 }
 
+title {
+    position: absolute;
+}
+
 body {
     font-family: sans-serif;
     cursor: crosshair; 
 }
 
+
+/* Placar */
 #txtScore {
     position: absolute;
     font-weight: bold;
@@ -20,16 +26,28 @@ body {
     //top: 100px;
 }
 
-title {
+
+/* Modal */
+.modal {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .9);
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#gameOverContainer {
+
 }
 
 
 
 
 
-
-
+/* Tela */
 
 
 
