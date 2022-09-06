@@ -12,6 +12,10 @@ const gameOverScore = $('#gameOverScore');
 const btnNewGame = $('#btnNewGame');
 const startModal = $('#startModal');
 const startContainer = $('#startContainer');
+const musicGame = $('#musicGame');
+    musicGame.volume = .5;
+const EXPLOSION = 1;
+const SHOOTING = 2;
 
 
 let projectiles = [];
@@ -105,6 +109,8 @@ function checkEnemies(){
 
 
 function gameOver(){
+    musicGame.pause();
+    musicGame.currentTime = 0;    
     cancelAnimationFrame(animationID);
     clearInterval(intervalID);
     gameOverScore.innerText = score;
@@ -113,6 +119,7 @@ function gameOver(){
 }
 
 function newGame(){
+    musicGame.play();
     gameOverModal.style.opacity = 0;
     gameOverModal.style.zIndex = -1;
     projectiles = [];
