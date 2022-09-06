@@ -134,7 +134,7 @@ function checkProjectiles(){
                 }
                 
                 score += 50 - Math.floor(enemy.radius);
-                txtScore.innerText = 'SOCRE: ' +  score;
+                txtScore.innerText = 'SCORE: ' +  score;
                 
                 projectiles.splice(i, 1);
                 createParticles(enemy, p);
