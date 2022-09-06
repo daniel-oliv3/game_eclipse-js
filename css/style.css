@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     border: 0;
-    display: block;
 }
 
 title {
@@ -12,6 +11,7 @@ title {
 body {
     font-family: sans-serif;
     cursor: crosshair; 
+    display: flex;
 }
 
 
@@ -40,8 +40,70 @@ body {
 }
 
 #gameOverContainer {
-
+    width: 500px;
+    padding: 16px;
+    box-shadow: 0 0 5px #48FCFF inset;
+    border-radius: 10px;
+    text-align: center;
 }
+
+#gameOverContainer > * {
+    text-shadow: 0 0 8px #48FCFF;
+    margin: 10px;
+}
+
+hr {
+    padding: 1px;
+    box-shadow: 0 0 5px #48FCFF;
+    //background-color: #48FCFF;
+}
+
+#gameOverScore {
+    margin-top: 20px;
+    font-size: 48px;
+    color: #48FCFF;
+}
+
+
+#btnNewGame {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, .1);
+    box-shadow: 0 0 5px #48FCFF;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#btnNewGame:hover {
+    background-color: #48FCFF;
+    box-shadow: 0 0 10px #48FCFF;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
