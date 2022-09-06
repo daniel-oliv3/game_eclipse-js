@@ -36,7 +36,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-
+    opacity: 0;
+    z-index: -1;
 }
 
 #gameOverContainer {

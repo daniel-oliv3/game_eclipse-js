@@ -7,12 +7,15 @@ const ctx = cnv.getContext('2d');
 const player = new Player(cnv.width/2, cnv.height/2, 30, '#48FCFF');
 const shootingSpeed = 4;
 const txtScore = $('#txtScore');
-
+const gameOverModal = $('#gameOverModal');
+const gameOverScore = $('#gameOverScore');
+const btnNewGame = $('#btnNewGame');
 
 let projectiles = [];
 let enemies = [];
 let particles = [];
 let intervalID;
+let animationID;
 let score = 0;
 
 
@@ -56,7 +59,7 @@ cnv.addEventListener('click', (e) =>{
 
 /* Funções */
 function loop(){
-    requestAnimationFrame(loop, cnv);
+    animationID = requestAnimationFrame(loop, cnv);
     update();
 }
 
@@ -80,9 +83,14 @@ function checkEnemies(){
 
         const distance = Math.hypot(player.x - enemy.x, player.y - enemy.y);
         if(distance < player.radius + enemy.radius){
-            alert('Game Over');
+            gameOver();
         }
     });
+}
+
+
+function gameOver(){
+    cancelAnimationFrame(animationID);
 }
 
 
