@@ -95,7 +95,7 @@ hr {
 #startContainer {
     width: 500px;
     height: 500px;
-    box-shadow: 0 0 5px #48FCFF;
+    box-shadow: 0 0 10px #000 inset;
     background-color: #48FCFF;
     transition: all .5s;
     border-radius: 50%;
