@@ -28,7 +28,7 @@ body {
 }
 
 
-/* Modal */
+/* Modal/GameOver */
 .modal {
     width: 100vw;
     height: 100vh;
@@ -85,8 +85,30 @@ hr {
 }
 
 
+/* Modal/Tela de Inicio  */
+#startModal {
+    opacity: 1;
+    z-index: 1;
+    background-color: #000;
+}
 
+#startContainer {
+    width: 500px;
+    height: 500px;
+    box-shadow: 0 0 10px #48FCFF;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
 
+#title {
+    font-size: 40px;
+    letter-spacing: 30px;
+    text-indent: 30px;
+    text-shadow: 0 0 5px #48FCFF;
+}
 
 
 
