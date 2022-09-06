@@ -6,11 +6,14 @@ const cnv = $('canvas');
 const ctx = cnv.getContext('2d');
 const player = new Player(cnv.width/2, cnv.height/2, 30, '#48FCFF');
 const shootingSpeed = 4;
+const txtScore = $('#txtScore');
+
 
 let projectiles = [];
 let enemies = [];
 let particles = [];
 let intervalID;
+let score = 0;
 
 
 function spawnEnemies(){
@@ -100,7 +103,10 @@ function checkProjectiles(){
                     enemy.newRadius = enemy.radius -10;
                 }else {
                     enemies.splice(eIndex, 1);
-                } 
+                }
+                
+                score += 50 - Math.floor(enemy.radius);
+                txtScore.innerText = 'SOCRE: ' +  score;
                 
                 projectiles.splice(i, 1);
                 createParticles(enemy, p);
@@ -116,6 +122,14 @@ function checkOffScreen(projectile, index){
         projectile.x - projectile.radius > cnv.width ||
         projectile.y + projectile.radius < 0 ||
         projectile.y - projectile.radius > cnv.height){
+
+            score -= 100;
+            if(score < 0){ // controle para não gerar números negativos
+                score = 0;
+            }
+
+            txtScore.innerText = 'SCORE: ' + score;
+
             projectiles.splice(index, 1);
         }
 }

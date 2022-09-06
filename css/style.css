@@ -7,22 +7,24 @@
 
 body {
     font-family: sans-serif;
+    cursor: crosshair; 
 }
 
 #txtScore {
+    position: absolute;
     font-weight: bold;
     text-shadow: 0 0 8px #48FCFF;
+    user-select: none;
+    padding: 8px;
+    //left: 50px;
+    //top: 100px;
 }
 
-/*title {
-    background: #000;
-    color: #fff;
+title {
+    position: absolute;
 }
 
-#txtScore {
-    background: #000;
-    color: #fff;
-}*/
+
 
 
 
