@@ -54,6 +54,7 @@ function spawnEnemies(){
 
 cnv.addEventListener('click', (e) =>{
     e.preventDefault();
+    playSound(SHOOTING);
     const angle = Math.atan2(e.clientY - player.y, e.clientX - player.x);
     const velocity = {
         x: Math.cos(angle) * shootingSpeed,
@@ -133,6 +134,14 @@ function newGame(){
     ctx.fillRect(0, 0, cnv.width, cnv.height);
 }
 
+function playSound(soundType){
+    const sound = document.createElement('audio');
+    sound.src = soundType === EXPLOSION ? './snd/explosion.ogg' : './snd/shooting.mp3';
+    sound.addEventListener('canplaythrough', () => {
+        sound.play();
+    });
+}
+
 
 /* Projeteis */
 function checkProjectiles(){
@@ -147,6 +156,7 @@ function checkProjectiles(){
 
             /* Colisçao do projetil com o inimigo */
             if(distance < p.radius + enemy.radius){
+                playSound(EXPLOSION);
                 if(enemy.radius > 15){
                     enemy.newRadius = enemy.radius -10;
                 }else {
