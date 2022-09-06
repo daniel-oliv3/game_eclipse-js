@@ -10,6 +10,9 @@ const txtScore = $('#txtScore');
 const gameOverModal = $('#gameOverModal');
 const gameOverScore = $('#gameOverScore');
 const btnNewGame = $('#btnNewGame');
+const startModal = $('#startModal');
+const startContainer = $('#startContainer');
+
 
 let projectiles = [];
 let enemies = [];
@@ -54,6 +57,16 @@ cnv.addEventListener('click', (e) =>{
     }
 
     projectiles.push(new Projectile(player.x, player.y, 3, '#48FCFF', velocity));
+});
+
+startContainer.addEventListener('click', () => {
+    startModal.style.opacity = 0;
+
+    setTimeout(()=>{
+        startModal.style.zIndex = -1;
+    }, 500);
+    
+    newGame();
 });
 
 btnNewGame.addEventListener('click', newGame);
@@ -187,11 +200,6 @@ function checkParticles(){
 }
 
 
-
-
-
-loop();
-spawnEnemies();
 
 
 
